@@ -2,7 +2,7 @@ name: Daily Website Pinger
 
 on:
   schedule:
-    - cron: '33 1 * * *'  # Runs every day at 9:00 UTC
+    - cron: '34 1 * * *'  # Runs every day at 9:00 UTC
   workflow_dispatch:      # Optional: allows manual trigger
 
 jobs:
