@@ -1,0 +1,25 @@
+name: Daily Website Pinger
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Runs every day at 9:00 UTC
+  workflow_dispatch:      # Optional: allows manual trigger
+
+jobs:
+  run-daily-pinger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run the ping script
+        run: python open_sites.py
